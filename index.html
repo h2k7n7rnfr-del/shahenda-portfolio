@@ -5,332 +5,376 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="The personal portfolio of Shahenda Khaled Magdy.">
-<title>Shahenda Khaled Magdy | Official Website</title>
-
+<meta name="description" content="Academic portfolio of Shahenda Khaled Magdy, a fourth-year student at the Faculty of Computers and Information.">
+<title>Shahenda Khaled Magdy | Academic Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 :root {
-  --black: #080808;
-  --panel: #111111;
-  --gold: #d4af67;
-  --light-gold: #f3dfaa;
-  --white: #f8f5ee;
-  --muted: #aaa49a;
+  --bg:#080808;
+  --panel:#11110f;
+  --gold:#d4af67;
+  --gold-light:#f3dfaa;
+  --white:#f8f5ee;
+  --muted:#aaa49a;
+  --border:rgba(212,175,103,.25);
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:85px; }
 body {
-  background: var(--black);
-  color: var(--white);
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.7;
-  overflow-x: hidden;
+  background:var(--bg);
+  color:var(--white);
+  font-family:'Montserrat',sans-serif;
+  line-height:1.75;
+  overflow-x:hidden;
 }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-.gold { color: var(--gold); }
-.container { width: min(1100px, 88%); margin: auto; }
+a { text-decoration:none; color:inherit; }
+.container { width:min(1080px,88%); margin:auto; }
+.gold { color:var(--gold); }
+.serif { font-family:'Cormorant Garamond',serif; }
 
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(8,8,8,.94);
-  border-bottom: 1px solid rgba(212,175,103,.22);
-  backdrop-filter: blur(12px);
+header {
+  position:sticky; top:0; z-index:20;
+  background:rgba(8,8,8,.96);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(12px);
 }
-.nav-inner {
-  min-height: 76px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
+.nav {
+  min-height:76px; display:flex; align-items:center;
+  justify-content:space-between; gap:20px;
 }
-.brand {
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--gold);
-  font-size: 23px;
-  font-weight: 600;
+.logo {
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px; color:var(--gold); font-weight:600;
 }
-.nav-links { display: flex; gap: 22px; font-size: 11px; }
-.nav-links a { color: #ddd; transition: color .3s; }
-.nav-links a:hover { color: var(--gold); }
+.nav-links { display:flex; gap:22px; }
+.nav-links a {
+  font-size:10px; letter-spacing:1px; color:#ddd;
+  transition:color .25s;
+}
+.nav-links a:hover { color:var(--gold); }
 
 .hero {
-  min-height: 83vh;
-  display: flex;
-  align-items: center;
-  position: relative;
+  min-height:78vh; display:flex; align-items:center;
+  position:relative;
   background:
-    radial-gradient(ellipse at 80% 35%, rgba(150,110,40,.13), transparent 45%),
-    linear-gradient(135deg, #080808, #14120d 65%, #080808);
-  border-bottom: 1px solid #292319;
+    radial-gradient(ellipse at 85% 30%,rgba(212,175,103,.13),transparent 45%),
+    linear-gradient(120deg,#080808,#11100c 70%,#080808);
+  border-bottom:1px solid var(--border);
 }
-.hero-content { padding: 90px 0; }
+.hero-content { padding:90px 0; }
 .eyebrow {
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  margin-bottom: 22px;
+  color:var(--gold); text-transform:uppercase;
+  letter-spacing:4px; font-size:10px;
 }
-h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  line-height: 1.1;
+h1,h2,h3 {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500; line-height:1.15;
 }
-h1 { font-size: clamp(46px, 9vw, 92px); max-width: 800px; }
-h1 span { display: block; color: var(--gold); }
-.hero-line { width: 80px; height: 2px; background: var(--gold); margin: 30px 0; }
-.hero-text { max-width: 520px; color: var(--muted); font-size: 14px; }
-.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+h1 { font-size:clamp(48px,8vw,86px); margin:22px 0; }
+h1 span { display:block; color:var(--gold); }
+.hero p.description {
+  max-width:610px; color:var(--muted); font-size:14px;
+}
+.actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:30px; }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 13px 22px;
-  border: 1px solid var(--gold);
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: .3s;
+  display:inline-block; padding:12px 20px;
+  border:1px solid var(--gold);
+  font-size:10px; letter-spacing:1.4px; text-transform:uppercase;
+  transition:background .25s,color .25s;
 }
-.btn-primary { background: var(--gold); color: #080808; }
-.btn:hover { background: var(--light-gold); color: #080808; }
+.btn.primary { background:var(--gold); color:#080808; }
+.btn:hover { background:var(--gold-light); color:#080808; }
 
-.section { padding: 95px 0; }
-.section-heading { text-align: center; margin-bottom: 48px; }
-.section-heading .eyebrow { margin-bottom: 13px; }
-.section-heading h2 { font-size: clamp(38px, 6vw, 57px); }
-.section-heading p { color: var(--muted); font-size: 12px; margin-top: 13px; }
+.section { padding:86px 0; }
+.section-heading { text-align:center; margin-bottom:42px; }
+.section-heading h2 { font-size:clamp(37px,6vw,55px); margin-top:10px; }
+.section-heading p:last-child {
+  color:var(--muted); font-size:12px; margin-top:10px;
+}
+
 .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
+  display:grid; grid-template-columns:.8fr 1.2fr;
+  gap:42px; align-items:center;
 }
-.about-art {
-  min-height: 330px;
-  border: 1px solid rgba(212,175,103,.45);
-  background:
-    radial-gradient(ellipse at center, rgba(212,175,103,.13), transparent 65%),
-    #10100e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  position: relative;
+.monogram-card {
+  min-height:300px; border:1px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(ellipse,rgba(212,175,103,.14),transparent 65%),var(--panel);
+  position:relative;
 }
-.about-art::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px solid rgba(212,175,103,.18);
+.monogram-card:before {
+  content:""; position:absolute; inset:13px;
+  border:1px solid rgba(212,175,103,.2);
 }
 .monogram {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(80px, 15vw, 140px);
-  color: var(--gold);
-  font-style: italic;
+  font-family:'Cormorant Garamond',serif;
+  color:var(--gold); font-size:130px; font-style:italic;
 }
-.about-copy h3 { font-size: 37px; margin-bottom: 22px; }
-.about-copy p { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+.about-copy h3 { font-size:35px; margin-bottom:16px; }
+.about-copy p { color:var(--muted); font-size:13px; margin-bottom:14px; }
+.info-line { border-top:1px solid #30291d; padding:12px 0; font-size:12px; }
+.info-line strong { color:var(--gold); font-weight:500; }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.grid {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;
 }
 .card {
-  padding: 30px 24px;
-  background: var(--panel);
-  border: 1px solid #28251e;
-  transition: transform .3s, border-color .3s;
+  padding:25px 22px; background:var(--panel);
+  border:1px solid #2a261e;
+  transition:transform .25s,border-color .25s;
 }
-.card:hover { transform: translateY(-5px); border-color: var(--gold); }
-.card-number { color: var(--gold); font-size: 11px; letter-spacing: 3px; }
-.card h3 { font-size: 28px; margin: 18px 0 12px; }
-.card p { color: var(--muted); font-size: 12px; }
+.card:hover { transform:translateY(-4px); border-color:var(--gold); }
+.card .number { color:var(--gold); font-size:10px; letter-spacing:2px; }
+.card h3 { font-size:27px; margin:15px 0 10px; }
+.card p { color:var(--muted); font-size:12px; }
+.tag {
+  display:inline-block; margin:12px 5px 0 0;
+  padding:5px 9px; border:1px solid #423720;
+  color:var(--gold-light); font-size:10px;
+}
+.project-card { min-height:210px; display:flex; flex-direction:column; align-items:flex-start; }
+.project-card p { margin-bottom:18px; }
+.project-card .status { margin-top:auto; font-size:10px; color:var(--gold); letter-spacing:1px; }
 
-.quote {
-  text-align: center;
-  background: linear-gradient(135deg, #15120c, #090909);
-  border-top: 1px solid #332a19;
-  border-bottom: 1px solid #332a19;
+.timeline { max-width:720px; margin:auto; }
+.timeline-item {
+  padding:22px 25px; margin-bottom:16px;
+  border-left:2px solid var(--gold); background:var(--panel);
 }
-.quote blockquote {
-  max-width: 750px;
-  margin: auto;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(29px, 5vw, 47px);
-  color: var(--light-gold);
-  line-height: 1.35;
-}
-.quote p { color: var(--muted); margin-top: 22px; font-size: 10px; letter-spacing: 3px; }
+.timeline-item h3 { font-size:25px; margin-bottom:7px; }
+.timeline-item p { color:var(--muted); font-size:12px; }
 
 .contact-box {
-  text-align: center;
-  padding: 45px 25px;
-  border: 1px solid rgba(212,175,103,.35);
-  background: #10100e;
+  padding:42px 24px; text-align:center;
+  border:1px solid var(--border); background:var(--panel);
 }
-.contact-box h3 { font-size: 36px; margin-bottom: 15px; }
-.contact-box p { color: var(--muted); font-size: 13px; margin-bottom: 25px; }
+.contact-box h2 { font-size:clamp(34px,6vw,48px); margin:12px 0; }
+.contact-box p { color:var(--muted); font-size:13px; margin-bottom:23px; }
 
 footer {
-  border-top: 1px solid #28251e;
-  padding: 28px 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 1px;
+  padding:25px 0; text-align:center;
+  border-top:1px solid var(--border);
+  color:var(--muted); font-size:10px;
 }
-footer span { color: var(--gold); }
+footer span { color:var(--gold); }
 
-.reveal { animation: appear .9s ease both; }
-@keyframes appear {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
+@media(max-width:700px) {
+  .nav { padding:12px 0; flex-wrap:wrap; gap:8px; }
+  .logo { font-size:23px; }
+  .nav-links { width:100%; justify-content:space-between; gap:7px; }
+  .nav-links a { font-size:9px; letter-spacing:.4px; }
+  .hero { min-height:70vh; }
+  .hero-content { padding:65px 0; }
+  .section { padding:65px 0; }
+  .about-grid { grid-template-columns:1fr; gap:26px; }
+  .monogram-card { min-height:230px; }
+  .monogram { font-size:105px; }
+  .grid { grid-template-columns:1fr; }
+  .card { padding:24px 20px; }
 }
-
-@media (max-width: 650px) {
-  .nav-inner { min-height: 68px; flex-wrap: wrap; padding: 12px 0; }
-  .brand { font-size: 21px; }
-  .nav-links { width: 100%; justify-content: space-between; gap: 10px; padding-bottom: 5px; }
-  .nav-links a { font-size: 10px; }
-  .hero { min-height: 75vh; }
-  .hero-content { padding: 70px 0; }
-  .eyebrow { letter-spacing: 3px; font-size: 9px; }
-  .hero-text { font-size: 13px; }
-  .section { padding: 68px 0; }
-  .about-grid { grid-template-columns: 1fr; gap: 28px; }
-  .about-art { min-height: 250px; }
-  .cards { grid-template-columns: 1fr; }
-  .card { padding: 27px 22px; }
-  .contact-box h3 { font-size: 30px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { animation: none; }
-  * { transition: none !important; }
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  *,*:before,*:after { transition:none!important; }
 }
 </style>
 </head>
-
 <body>
-<nav>
-  <div class="container nav-inner">
-    <a class="brand" href="#home">Shahenda.</a>
-    <div class="nav-links">
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">Shahenda.</a>
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">HOME</a>
       <a href="#about">ABOUT</a>
-      <a href="#journey">JOURNEY</a>
+      <a href="#education">EDUCATION</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#projects">PROJECTS</a>
       <a href="#contact">CONTACT</a>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>
 
 <main>
-  <section class="hero" id="home">
-    <div class="container hero-content reveal">
-      <p class="eyebrow">Elegance · Ambition · Identity</p>
-      <h1>Shahenda <span>Khaled Magdy</span></h1>
-      <div class="hero-line"></div>
-      <p class="hero-text">
-        Welcome to my personal space — a reflection of my personality,
-        my ambitions, and the beautiful journey of becoming who I dream to be.
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <p class="eyebrow">Academic Portfolio · Computer Science</p>
+    <h1>Shahenda <span>Khaled Magdy</span></h1>
+    <p class="description">
+      Fourth-Year Student at the Faculty of Computers and Information.
+      Exploring technology, developing new skills, and building a foundation
+      for a future in the world of computing.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore My Work</a>
+      <a class="btn" href="#about">About Me</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Introduction</p>
+      <h2>About <span class="gold">Me</span></h2>
+      <p>A growing journey in technology and learning.</p>
+    </div>
+    <div class="about-grid">
+      <div class="monogram-card"><div class="monogram">S.</div></div>
+      <div class="about-copy">
+        <h3>Curiosity Into <span class="gold">Possibility</span></h3>
+        <p>
+          I am a fourth-year student at the Faculty of Computers and
+          Information, interested in learning how technology can solve
+          problems and create meaningful digital experiences.
+        </p>
+        <p>
+          This portfolio presents my academic background, technical
+          interests, projects, and achievements as I continue to develop
+          my knowledge and practical experience.
+        </p>
+        <div class="info-line"><strong>Academic Level:</strong> Fourth Year</div>
+        <div class="info-line"><strong>Field:</strong> Computers and Information</div>
+        <div class="info-line"><strong>Focus:</strong> Learning · Technology · Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Academic Background</p>
+      <h2>My <span class="gold">Education</span></h2>
+      <p>The foundation behind my professional journey.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="eyebrow">Current Studies</p>
+        <h3>Faculty of Computers and Information</h3>
+        <p>Fourth-Year Undergraduate Student</p>
+        <p>Building academic knowledge in computing and exploring areas of technology.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="eyebrow">Continuous Development</p>
+        <h3>Learning Beyond the Classroom</h3>
+        <p>Developing knowledge through coursework, practical exercises, and personal learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Technical Interests</p>
+      <h2>Skills & <span class="gold">Interests</span></h2>
+      <p>Areas to develop and showcase as experience grows.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="number">01 / DEVELOPMENT</span>
+        <h3>Web Development</h3>
+        <p>Exploring how websites are designed, structured, and built.</p>
+        <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+      </article>
+      <article class="card">
+        <span class="number">02 / PROGRAMMING</span>
+        <h3>Programming</h3>
+        <p>Building problem-solving skills through programming concepts and practice.</p>
+        <span class="tag">Problem Solving</span><span class="tag">Algorithms</span>
+      </article>
+      <article class="card">
+        <span class="number">03 / TECHNOLOGY</span>
+        <h3>Computer Science</h3>
+        <p>Exploring computing concepts and the technologies shaping digital experiences.</p>
+        <span class="tag">Computing</span><span class="tag">Technology</span>
+      </article>
+    </div>
+    <p style="color:#aaa49a;font-size:11px;margin-top:18px;text-align:center">
+      Note: Listed technologies represent areas to explore and should be updated to reflect actual skills and experience.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Selected Work</p>
+      <h2>Academic <span class="gold">Projects</span></h2>
+      <p>A space for coursework, practical assignments, and personal projects.</p>
+    </div>
+    <div class="grid">
+      <article class="card project-card">
+        <span class="number">PROJECT 01</span>
+        <h3>Web Project</h3>
+        <p>Add a description of a website or web application you have actually created, including its purpose and tools.</p>
+        <span class="status">PROJECT DETAILS TO BE ADDED</span>
+      </article>
+      <article class="card project-card">
+        <span class="number">PROJECT 02</span>
+        <h3>Programming Project</h3>
+        <p>Showcase a programming assignment or application, describing the problem it solves and your contribution.</p>
+        <span class="status">PROJECT DETAILS TO BE ADDED</span>
+      </article>
+      <article class="card project-card">
+        <span class="number">PROJECT 03</span>
+        <h3>Academic Research</h3>
+        <p>Present a research assignment, technical report, or academic activity when available.</p>
+        <span class="status">PROJECT DETAILS TO BE ADDED</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Growth & Recognition</p>
+      <h2>Certificates & <span class="gold">Achievements</span></h2>
+      <p>Qualifications and milestones can be presented here.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="number">01</span>
+        <h3>Certificates</h3>
+        <p>Add verified course certificates, training programs, and qualifications.</p>
+      </article>
+      <article class="card">
+        <span class="number">02</span>
+        <h3>Achievements</h3>
+        <p>Highlight real academic accomplishments, awards, or competitions.</p>
+      </article>
+      <article class="card">
+        <span class="number">03</span>
+        <h3>Activities</h3>
+        <p>Include relevant student activities, volunteering, or teamwork experience.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Let's Connect & <span class="gold">Collaborate</span></h2>
+      <p>
+        Interested in academic collaboration or technology projects?
+        Contact information will be added here.
       </p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#about">Discover My World</a>
-        <a class="btn" href="#contact">Get In Touch</a>
-      </div>
+      <a class="btn primary" href="#home">Back to Top ↑</a>
     </div>
-  </section>
-
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">A Little About Me</p>
-        <h2>More Than a <span class="gold">Name</span></h2>
-        <p>A personal story, written one chapter at a time.</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-art">
-          <div class="monogram">S.</div>
-        </div>
-        <div class="about-copy">
-          <h3>Hello, I'm <span class="gold">Shahenda</span></h3>
-          <p>
-            I believe that true elegance comes from within, and that every
-            dream begins with the courage to take the first step.
-          </p>
-          <p>
-            This space is a small reflection of my journey, my aspirations,
-            and the person I continue to become every day.
-          </p>
-          <p class="gold">Dream with purpose. Live with grace.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="journey">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">What Defines Me</p>
-        <h2>My <span class="gold">World</span></h2>
-        <p>The values that make every journey meaningful.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <span class="card-number">01 / DREAMS</span>
-          <h3>My Ambitions</h3>
-          <p>Always looking forward, setting new goals, and believing in the possibilities ahead.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">02 / GROWTH</span>
-          <h3>My Journey</h3>
-          <p>Every experience brings a lesson. Every new chapter is a chance to grow.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">03 / IDENTITY</span>
-          <h3>My Values</h3>
-          <p>Staying true to myself, appreciating the little things, and moving with purpose.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section quote">
-    <div class="container">
-      <p class="eyebrow">A Thought to Remember</p>
-      <blockquote>
-        “She believed in her dreams, and that made all the difference.”
-      </blockquote>
-      <p>GRACE IN EVERY CHAPTER</p>
-    </div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <p class="eyebrow">Let's Stay Connected</p>
-        <h3>Every Story Has <span class="gold">More to Tell</span></h3>
-        <p>This is the beginning of something beautiful.</p>
-        <a class="btn btn-primary" href="#home">Back to the Beginning ↑</a>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <footer>
   <div class="container">
-    Crafted with elegance · <span>Shahenda Khaled Magdy</span> · © 2026
+    <span>Shahenda Khaled Magdy</span> · Academic Portfolio · © 2026
   </div>
 </footer>
+
 </body>
 </html>
